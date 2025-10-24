@@ -12,7 +12,7 @@ jobs:
     steps:
       # 1. 检出仓库
       - name: Checkout repository
-        uses: actions/upload-artifact@v4
+        uses: actions/check-artifact@v4
 
       # 2. 安装 Sing-Box（示例用 Linux x86_64 最新 release）
       - name: Install Sing-Box
@@ -33,7 +33,7 @@ jobs:
 
       # 4. 上传生成的 SRS 文件（可选）
       - name: Upload compiled SRS
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: compiled-srs
           path: '*.srs'
