@@ -20,7 +20,7 @@ jobs:
           wget  https://github.com/SagerNet/sing-box/releases/download/v1.12.11/sing-box-1.12.11-linux-amd64.tar.gz
           tar -xzf sing-box-1.12.11-linux-amd64.tar.gz
           chmod +x sing-box-1.12.11-linux-amd64
-          sudo mv  sing-box-1.12.11-linux-amd64 /usr/local/bin/sing-box
+          sudo mv  sing-box-1.12.11-linux-amd64/sing-box /usr/local/bin/sing-box
           sing-box --version
 
       # 3. 编译 JSON 文件
