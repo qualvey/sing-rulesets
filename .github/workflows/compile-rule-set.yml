@@ -17,10 +17,10 @@ jobs:
       # 2. 安装 Sing-Box（示例用 Linux x86_64 最新 release）
       - name: Install Sing-Box
         run: |
-          wget https://github.com/SagerNet/sing-box/releases/latest/download/sing-box-linux-amd64.gz
-          gunzip sing-box-linux-amd64.gz
-          chmod +x sing-box-linux-amd64
-          sudo mv sing-box-linux-amd64 /usr/local/bin/sing-box
+          wget  https://github.com/SagerNet/sing-box/releases/download/v1.12.11/sing-box-1.12.11-linux-amd64.tar.gz
+          tar -xzf sing-box-1.12.11-linux-amd64.tar.gz
+          chmod +x sing-box-1.12.11-linux-amd64
+          sudo mv  sing-box-1.12.11-linux-amd64 /usr/local/bin/sing-box
           sing-box --version
 
       # 3. 编译 JSON 文件
