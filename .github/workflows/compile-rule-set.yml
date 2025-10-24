@@ -26,9 +26,10 @@ jobs:
       # 3. 编译 JSON 文件
       - name: Compile JSON to SRS
         run: |
-          for file in *.json; do
+          find . -name '*.json' | while read file;do
             echo "Compiling $file ..."
-            sing-box rule-set compile --output "${file%.json}.srs" "$file"
+            out="${file%.json}.srs"
+            sing-box rule-set compile --output "$out" "$file"
           done
 
       # 4. 上传生成的 SRS 文件（可选）
