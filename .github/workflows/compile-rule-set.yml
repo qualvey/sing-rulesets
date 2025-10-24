@@ -33,8 +33,13 @@ jobs:
           done
 
       # 4. 上传生成的 SRS 文件（可选）
-      - name: Upload compiled SRS
-        uses: actions/upload-artifact@v4
-        with:
-          name: compiled-srs
-          path: '*.srs'
+        #
+      - name: Commit and push compiled files
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          git add **/*.srs
+          git commit -m "Auto-compile SRS files [skip ci]" || echo "No changes to commit"
+          git push
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
